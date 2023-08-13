@@ -4,6 +4,10 @@ output: html_document
 date: "Updated: `r format(Sys.time(), '%d %B, %Y')`"
 ---
 
+# NLP Cheat Sheets
+
+https://www.kdnuggets.com/2022/12/top-5-nlp-cheat-sheets-beginners-professional.html
+
 # nltk
 ## n-grams
 ```python

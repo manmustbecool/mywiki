@@ -10,6 +10,7 @@ Install anaconda
 ``` bash
 python -V # get python version
 ```
+Python Object-Oriented Programming (OOP): https://pynative.com/python-polymorphism/
 
 # Data types
 
