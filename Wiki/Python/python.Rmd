@@ -60,6 +60,10 @@ li = [3, 4, 5]
 
 li = [None]*5 # [None, None, None, None, None]
 
+# to a string and back
+s = json.dumps(li)
+li = json.loads(s)
+
 # check if it is empty
 if not li:
   print("List is empty")
@@ -280,6 +284,16 @@ ay = np.array([["a", 0]] * 5, dtype='O')
 #        ['a', 0],
 #        ['a', 0]], dtype=object)
 
+# initialize data frame
+mat = np.array([[1,2,3], [1,2,3], [1,2,3]])
+print(mat)
+#  [[1 2 3]
+#   [1 2 3]
+#   [1 2 3]]
+
+np.sum(mat, axis=1)  # axis=1 : get the sum of each the columns 
+#  array([6, 6, 6])
+
 # get second value of each element in the array
 ay[:, 1]
 # array([0, 0, 0, 0, 0], dtype=object)
@@ -396,18 +410,6 @@ np.isin(ay1, ay2)
 
 np.where(np.isin(ay1, ay2))
 # (array([2, 3], dtype=int64),)   
-```
-
-**Initialize data frame**
-
-``` python
-mat = np.array([[1,2,3], [1,2,3], [1,2,3]])
-print(mat)
-#     [[1 2 3]
-#     [1 2 3]
-#     [1 2 3]]
-
-np.sum(mat, axis=1)  # axis=1  "get the sum of each the columns" 
 ```
 
 ## Panda::Series
@@ -566,6 +568,16 @@ df.fillna(0) # Replace all the NaN values with Zero
 df1 = df.replace(np.nan, '', regex=True) # Replace all the NaN with blank/empty string
 
 df.dropna(axis=1, how='all') # Drop the columns where all elements are NaN
+```
+
+### iterate over rows
+``` python
+df = pd.DataFrame({'c1': [10, 11, 12], 'c2': [100, 110, 120]})
+for index, row in df.iterrows():
+    print(index, row['c1'], row['c2'])
+# 0 10 100
+# 1 11 110
+# 2 12 120
 ```
 
 ### to numpy array
